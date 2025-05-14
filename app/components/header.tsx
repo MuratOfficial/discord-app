@@ -24,7 +24,7 @@ function Header() {
 
 
   return (
-      <div className='w-full col-span-4 h-10 flex flex-row items-center justify-center bg-black text-white text-center'>{title}</div>
+      <div className='w-full col-span-4 h-10 flex flex-row items-center justify-center bg-background text-white text-center'>{title}</div>
   )
 }
 
