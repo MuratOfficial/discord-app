@@ -3,6 +3,7 @@ import LeftSideLinks from './left-side-links'
 import { BsPersonArmsUp } from 'react-icons/bs'
 import { GoRocket } from 'react-icons/go'
 import { GiShop } from 'react-icons/gi'
+import Link from 'next/link'
 
 function LeftSideBar() {
   return (
@@ -20,7 +21,14 @@ function LeftSideBar() {
       <div className='w-full px-1 mt-2'>
           <hr className=' w-full h-1 text-zinc-800/90' />
       </div>
-      
+      <div className='w-full flex flex-row justify-between group items-center px-3 mt-2'>
+        <p className='text-zinc-400/95 font-medium text-sm group-hover:text-zinc-100 group-hover:font-semibold'>Direct Messages</p>
+        <Link href={`/main/create`} className='text-zinc-400/95 font-medium text-xl '>+</Link>
+      </div>
+
+      {/* Список чатов */}
+
+
       </div>
       
       
