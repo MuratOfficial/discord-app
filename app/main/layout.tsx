@@ -11,7 +11,10 @@ function MainLayout({
     <main className="w-full min-h-screen grid grid-cols-4">
       <LeftSideBar/>
 
-      <div className=" col-span-2 bg-bg-secondary"></div>
+      <div className=" col-span-2 bg-bg-secondary">
+
+        {children}
+      </div>
       <RightSideBar/>
     </main>
   )

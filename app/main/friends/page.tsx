@@ -1,8 +1,10 @@
+import Chats from '@/app/components/chats'
 import React from 'react'
 
 function FriendsPage() {
   return (
-    <div>FriendsPage</div>
+    <div>
+      <Chats/></div>
   )
 }
 
