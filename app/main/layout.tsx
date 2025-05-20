@@ -1,6 +1,6 @@
 import React from 'react'
-import LeftSideBar from '../components/sidebar/left-side-bar';
-import RightSideBar from '../components/sidebar/right-side-bar';
+import RightSideBar from '../../components/sidebar/right-side-bar';
+import LeftSideBar from '@/components/sidebar/left-side-bar';
 
 function MainLayout({
   children,

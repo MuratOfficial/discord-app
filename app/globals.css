@@ -12,6 +12,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --popover: #1A1A1E;
+  --popover-foreground: #FFFFFF;
 }
 
 /* @media (prefers-color-scheme: dark) {

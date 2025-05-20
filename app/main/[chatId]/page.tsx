@@ -1,4 +1,4 @@
-import Chats from '@/app/components/chats'
+import Chats from '@/components/chats'
 import React from 'react'
 
 function ChatPage() {

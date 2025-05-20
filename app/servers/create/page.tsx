@@ -1,8 +1,16 @@
+import { getServers } from '@/actions/data'
+import { ServerForm } from '@/components/form/server-form'
 import React from 'react'
 
-function CreateServerPage() {
+async function CreateServerPage() {
+
+  const servers = await getServers();
+
   return (
-    <div>CreateServerPage</div>
+    <div className='pl-24'>
+
+      <ServerForm/>
+    </div>
   )
 }
 
