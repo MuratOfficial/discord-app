@@ -5,7 +5,7 @@ function ChatPage() {
   return (
     <div>
 
-      <Chats/>
+      {/* <Chats/> */}
     </div>
   )
 }

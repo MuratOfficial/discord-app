@@ -4,7 +4,8 @@ import React from 'react'
 function FriendsPage() {
   return (
     <div>
-      <Chats/></div>
+      {/* <Chats/> */}
+      </div>
   )
 }
 

@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SideButtons from './side-buttons'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { FaCompass } from 'react-icons/fa'
@@ -13,6 +13,14 @@ interface SideBarNavProps {
 }
 
 function SideBarNav({servers}:SideBarNavProps) {
+
+  const [cacheServers, setCachServers] = useState<Server[] | null>(null);
+
+  useEffect(()=>{
+    setCachServers(servers)
+
+
+  }, [servers])
 
   const pathname = usePathname();
 
@@ -42,8 +50,8 @@ function SideBarNav({servers}:SideBarNavProps) {
           <LiaDownloadSolid size={20} className='text-white'/>
         }/>
 
-        {servers?.map(x=>(
-          <SideButtons title={x.name} key={x.id} href='/download'  classname={pathname.startsWith("/download") ? "bg-blue-500" : "bg-zinc-800 "}  />
+        {cacheServers?.map(x=>(
+          <SideButtons title={x.name} key={x.id} href={`/servers/${x.id}`}  classname={pathname.includes(`${x.id}`) ? "bg-blue-500" : "bg-zinc-800 "}  />
         ))}
     </div>
   )

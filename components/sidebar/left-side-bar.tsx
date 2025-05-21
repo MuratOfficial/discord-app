@@ -2,10 +2,25 @@ import React from 'react'
 import { BsPersonArmsUp } from 'react-icons/bs'
 import { GoRocket } from 'react-icons/go'
 import { GiShop } from 'react-icons/gi'
-import Link from 'next/link'
 import LeftSideLinks from './left-side-links'
 
-function LeftSideBar() {
+import { getUsers } from '@/actions/data'
+import ChatAddForm from '../form/chat-add-form'
+
+
+async function LeftSideBar() {
+
+    const users = await getUsers();
+
+    const reformattedUsers:{
+        value:string;
+        label:string;
+    }[] = users.map(x=>({
+      value:x.email,
+      label:x.username ?? x.email
+    }))
+
+
   return (
     <div className=' flex flex-col w-full h-full h-min-screen pl-16'>
       <div className='w-full py-2 px-3  border rounded-tl-lg border-t-zinc-800/90 border-l-zinc-800/90 border-b-zinc-800/90'>
@@ -23,7 +38,9 @@ function LeftSideBar() {
       </div>
       <div className='w-full flex flex-row justify-between group items-center px-3 mt-2'>
         <p className='text-zinc-400/95 font-medium text-sm group-hover:text-zinc-100 group-hover:font-semibold'>Direct Messages</p>
-        <Link href={`/main/create`} className='text-zinc-400/95 font-medium text-xl '>+</Link>
+        
+       <ChatAddForm users={reformattedUsers}/>
+
       </div>
 
       {/* Список чатов */}

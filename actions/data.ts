@@ -8,3 +8,8 @@ export async function getServers(){
 
     return servers
 }
+
+export async function getUsers(){
+    const users = await prisma.user.findMany();
+    return users
+}
